@@ -6,22 +6,24 @@ int main()
     PhoneBook Book;
     std::string buff;
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	while ("PhoneBook")
 	{
-		std::cout << "Please type ADD, SEARCH or EXIT ->";
+		std::cout << "Please type ADD, SEARCH or EXIT -> ";
 		std::cin >> buff;
-		std::cout << "You typed :" << buff << std::endl;
 		if (!buff.compare("ADD"))
 		{
 			if (i == 8)
 				i = 0;
 			Book.new_contact(i);
 			i++;
+			j++;
 		}
-		//if (!buff.compare("SEARCH"))
-			// search function
+		if (!buff.compare("SEARCH"))
+			Book.search_contact(j);
 		if (!buff.compare("EXIT"))
 			break;
 	}

@@ -10,7 +10,8 @@ class Contact
     Contact(void);
     ~Contact(void);
     void    init_param(void);
-    void    print_contact(void);
+    void    print_contact(int i);
+    void    print_info(void);
     void    set_firstname(std::string info);
     void    set_lastname(std::string info);
     void    set_nickname(std::string info);

@@ -8,6 +8,7 @@ class PhoneBook {
     PhoneBook();
     ~PhoneBook(void);
     void    new_contact(int i);
+    void    search_contact(int j);
     private:
     Contact contact[8];
 };
