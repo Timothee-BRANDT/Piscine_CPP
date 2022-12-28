@@ -20,7 +20,8 @@ int main()
 				i = 0;
 			Book.new_contact(i);
 			i++;
-			j++;
+			if (j != 8)
+				j++;
 		}
 		if (!buff.compare("SEARCH"))
 			Book.search_contact(j);
