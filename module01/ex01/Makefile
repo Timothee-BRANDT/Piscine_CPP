@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SOURCES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SOURCES = main.cpp ZombieHorde.cpp Zombie.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 zombie: $(OBJECTS)
