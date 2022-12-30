@@ -31,6 +31,6 @@ void    Harl::complain(string level) {
         case 4: (this->*ptr[3])();
         break;
         default:
-        cout << "[ Probably complaining about insignificant problems ]" << endl;
+        cout << "[ Probably complaining about insignificant problems. ]" << endl;
     }
 }
