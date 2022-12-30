@@ -32,3 +32,4 @@ Fixed& Fixed::operator=(Fixed const & rhs) {
 void Fixed::setRawBits(int const raw) {
     this->value = raw;
 }
+

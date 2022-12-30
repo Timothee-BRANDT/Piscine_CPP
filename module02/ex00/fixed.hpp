@@ -16,3 +16,4 @@ class Fixed {
 		int	value;
 		static const int fractionnalBits = 8;
 };
+
