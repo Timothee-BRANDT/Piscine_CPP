@@ -10,10 +10,6 @@ int main(void)
 
     cout << a.getRawBits() << endl;
     cout << b.getRawBits() << endl;
-    // b.setRawBits(50);
-    // cout << b.getRawBits() << endl;
     cout << c.getRawBits() << endl;
-    // c = b;
-    // cout << c.getRawBits() << endl;
     return (0);
 }

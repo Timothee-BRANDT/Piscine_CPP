@@ -6,21 +6,16 @@ Fixed::Fixed(void) {
     return ;
 };
 
-Fixed::~Fixed(void) {
-    cout << "Default desctuctor called" << endl;
-    return ;
-};
-
 Fixed::Fixed(Fixed const &src) {
-    cout << "Copy desctuctor called" << endl;
+    cout << "Copy constructor called" << endl;
     *this = src;
     return ;
 }
 
-int Fixed::getRawBits(void) const {
-    cout << "getRawBits member function called" << endl;
-    return this->value;
-}
+Fixed::~Fixed(void) {
+    cout << "Default desctuctor called" << endl;
+    return ;
+};
 
 Fixed& Fixed::operator=(Fixed const & rhs) {
     cout << "Copy assignment operator called" << endl;
@@ -33,3 +28,7 @@ void Fixed::setRawBits(int const raw) {
     this->value = raw;
 }
 
+int Fixed::getRawBits(void) const {
+    cout << "getRawBits member function called" << endl;
+    return this->value;
+}
