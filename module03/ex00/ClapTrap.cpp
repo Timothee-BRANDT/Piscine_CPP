@@ -60,3 +60,15 @@ void	ClapTrap::attack(const std::string &target) {
 	else
 		std::cout << "No more energy..." << std::endl;
 }
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+	if (energy_points > 0)
+	{
+		std::cout << "ClapTrap " << name << " has been repaired by " << amount << " hp points" << std::endl;
+		hit_points += amount;
+		energy_points--;
+	}
+	else
+		std::cout << "No more energy... can't be repaired." << std::endl;
+}

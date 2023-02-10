@@ -22,6 +22,12 @@ FragTrap::~FragTrap(void)
     std::cout << "FragTrap Destructor called" << std::endl;
 }
 
+FragTrap &FragTrap::operator=(FragTrap const &rhs)
+{
+    ClapTrap::operator=(rhs);
+    return *this;
+}
+
 void FragTrap::highFivesGuys(void) {
     std::cout << "High Fives?" << std::endl;
 }
