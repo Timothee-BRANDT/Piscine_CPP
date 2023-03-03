@@ -25,12 +25,14 @@ int main()
 
     // Cat chat1;
     // Cat chat2;
+    // // Cat chat2(chat1);
 
-    // chat1.setIdeas("CHATTE");
+    // chat1.setIdeas("CHAT");
     // chat2.setIdeas("CHATON");
 
     // chat1.showIdea();
     // chat2.showIdea();
+    // std::cout << std::endl;
 
     // chat1 = chat2;
 

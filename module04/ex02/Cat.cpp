@@ -10,9 +10,10 @@ Cat::Cat(void)
 
 Cat::Cat(Cat const &rhs)
 {
-    type = rhs.type;
-    *brain = *rhs.brain;
     std::cout << "Cat Copy Constructor Called" << std::endl;
+    type = rhs.type;
+    brain = new Brain();
+    *this->brain = *rhs.brain;
     return;
 }
 
@@ -23,6 +24,9 @@ Cat::~Cat(void)
 }
 
 Cat &Cat::operator=(Cat const &rhs) {
+    Animal::operator=(rhs);
+    delete brain;
+    brain = new Brain();
     *brain = *rhs.brain;
     return *this;
 }

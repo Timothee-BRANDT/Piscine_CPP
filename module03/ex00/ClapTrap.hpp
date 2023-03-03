@@ -10,8 +10,7 @@ class ClapTrap {
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap(void);
 		ClapTrap 	&operator=(ClapTrap const & rhs);
-		ClapTrap 	&operator--(void);
-		std::string get_name(unsigned int damage) const;
+		std::string get_name(unsigned int damage);
 		int		get_hp(void) const;
 		int		get_energy(void) const;
 		int		get_dmg(void) const;

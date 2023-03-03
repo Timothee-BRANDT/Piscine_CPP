@@ -1,5 +1,5 @@
 CC = c++
-NAME = template
+NAME = container
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SOURCES = main.cpp

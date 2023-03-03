@@ -5,7 +5,8 @@
 
 int main()
 {
-    // Animal lol; can't instance abstract class;
+    // Animal lol;
+    // Cat chat;
     // for (int i = 0; i < 5; i++)
     // {
     //     if (i % 2)
@@ -23,21 +24,19 @@ int main()
     //     delete lol[i];
     // }
 
-    // deep copy testor
+    Cat chat1;
+    Cat chat2;
 
-    // Cat chat1;
-    // Cat chat2;
+    chat1.setIdeas("CHATTE");
+    chat2.setIdeas("CHATON");
 
-    // chat1.setIdeas("CHATTE");
-    // chat2.setIdeas("CHATON");
+    chat1.showIdea();
+    chat2.showIdea();
 
-    // chat1.showIdea();
-    // chat2.showIdea();
+    chat1 = chat2;
 
-    // chat1 = chat2;
-
-    // chat1.showIdea();
-    // chat2.showIdea();
+    chat1.showIdea();
+    chat2.showIdea();
 
     // system("leaks animal");
 }

@@ -29,7 +29,8 @@ void	ClapTrap::takeDamage(unsigned int amout) {
 	this->hit_points -= amout;	
 }
 
-std::string ClapTrap::get_name(unsigned int damage) const {
+std::string ClapTrap::get_name(unsigned int damage) {
+	this->takeDamage(damage);
 	return this->name;
 }
 
@@ -47,7 +48,7 @@ int	ClapTrap::get_dmg(void) const {
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &rhs) {
 	if (this != &rhs)
-		this->name = rhs.get_name(5);
+		this->name = rhs.name;
 	return *this;
 }
 

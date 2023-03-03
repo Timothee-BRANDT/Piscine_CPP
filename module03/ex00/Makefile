@@ -13,3 +13,4 @@ all: $(OBJECTS)
 clean:
 	rm -f $(OBJECTS) a.out
 
+re : clean all

@@ -16,7 +16,7 @@ class ClapTrap {
 		int		get_energy(void) const;
 		unsigned int		get_dmg(void) const;
 		void	set_damage(int damage);
-		virtual void	attack(const std::string &target);
+		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amout);
 		void	beRepaired(unsigned int amout);
 	protected:
