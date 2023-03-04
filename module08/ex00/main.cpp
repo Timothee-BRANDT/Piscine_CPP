@@ -14,4 +14,11 @@ int main()
 		std::cout << "Element found" << std::endl;
 	else
 		std::cout << "Element not found" << std::endl;
+
+	int test1 = easyfind(tab, 123);
+
+	if (test1 == 1)
+		std::cout << "Element found" << std::endl;
+	else
+		std::cout << "Element not found" << std::endl;
 }
