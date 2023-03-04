@@ -2,7 +2,7 @@ CC = c++
 NAME = container
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SOURCES = main.cpp
+SOURCES = main.cpp Span.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
