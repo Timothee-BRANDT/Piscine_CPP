@@ -12,9 +12,6 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	{
 		for(std::map<std::string, float>::const_iterator it = rhs.database.begin(); it != rhs.database.end(); it++)
 			database[it->first] = it->second;
-
-		for(std::map<std::string, float>::const_iterator itt = rhs.input.begin(); itt != rhs.input.end(); itt++)
-			input[itt->first] = itt->second;
 	}
 	return (*this);
 }
@@ -45,7 +42,7 @@ int	BitcoinExchange::get_database()
 
 	if (!file)
 		return (error("Database file is missing", 1));
-	std::getline(file, line); // skip first line
+	std::getline(file, line);
 	while (std::getline(file, line)) {
 		std::string date = line.substr(0, line.find(','));
 		std::string rate = line.substr(line.find(',') + 1);
@@ -55,24 +52,47 @@ int	BitcoinExchange::get_database()
 	return (0);
 }
 
-int BitcoinExchange::get_input_file(std::string file)
+int BitcoinExchange::start(std::string file)
 {
 	std::ifstream filestream(file);
 	std::string line;
-
 	if (!filestream)
 		return (error("The file you provide doesn't exist", 1));
-	std::getline(filestream, line); // skip first line
+	std::getline(filestream, line);
 	while (std::getline(filestream, line))
 	{
+		int flag = 0;
 		std::string date = line.substr(0, line.find('|') - 1);
 		std::string rate = line.substr(line.find('|') + 2);
+		std::map<std::string, float>::iterator it = database.lower_bound(date);
 		float value = std::stof(rate);
 		if(parsing(date, value))
 			continue;
 		else
-			std::cout << date << "|" << value << std::endl;
-		// iterate on database;
+		{
+			std::map<std::string, float>::iterator i;
+			for (i = database.begin(); i != database.end(); i++)
+			{
+				if (date == i->first)
+				{
+					float f = value * i->second;
+					std::cout << date << " => " << value << " = " << f << std::endl;
+					flag = 1;
+					break;
+				}
+			}
+			if (it == database.begin()) // the closest date is the first one
+			{
+				float _f = value * it->second;
+				std::cout << date << " => " << value << " = " << _f << std::endl;
+			}
+			else if (!flag)
+			{
+				it--; // decrese iterator to get the lower date
+				float _f = value * it->second;
+				std::cout << date << " => " << value << " = " << _f << std::endl;
+			}
+		}
 	}
 	return (0);
 }

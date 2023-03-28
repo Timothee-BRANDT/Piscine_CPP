@@ -13,7 +13,7 @@ int main(int ac, char *arg[])
 		if (!input)
 			return (error("File doesn't exist.", 1));
 		map.get_database();
-		map.get_input_file(filename);
+		map.start(filename);
 		input.close();
 	}
 	return (0);
