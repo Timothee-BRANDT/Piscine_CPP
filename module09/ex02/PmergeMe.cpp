@@ -1,6 +1,6 @@
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(){};
+PmergeMe::PmergeMe() {};
 
 PmergeMe::PmergeMe(PmergeMe const &rhs)
 {
@@ -16,6 +16,8 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &rhs)
 	}
 	return (*this);
 }
+
+PmergeMe::~PmergeMe() {};
 
 int PmergeMe::parse(int ac, char *argv[])
 {
@@ -33,10 +35,8 @@ int PmergeMe::parse(int ac, char *argv[])
 	}
 	std::vector<int>::iterator it;
 	for (it = vector.begin(); it != vector.end(); it++)
-	{
 		if (*it < 0)
 			return (error("Error, input must be positive numbers only", 1));
-	}
 	for (unsigned int i = 0; i < vector.size(); i++)
 		for(unsigned int j = i + 1; j < vector.size(); j++)
 			if (vector[i] == vector[j])
@@ -171,7 +171,6 @@ void PmergeMe::start_list()
 	std::list<int> result =	list_algo(list);
 }
 
-PmergeMe::~PmergeMe(){};
 
 int error(std::string str, int code)
 {

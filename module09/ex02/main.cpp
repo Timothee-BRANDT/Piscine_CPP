@@ -12,12 +12,10 @@ int main(int ac, char *argv[])
 	clock_t vector_end = clock();
 	double vector_time = double(vector_end - vector_start) / CLOCKS_PER_SEC;
 	std::cout << "Vector Runtime -> " << std::fixed << vector_time << " sec " << std::endl;
-	// std::cout << "Vector Runtime -> " << std::fixed << (vector_time* 1000000000) << " nanosec " << std::endl;
 	clock_t list_start = clock();
 	merge.start_list();
 	clock_t list_end = clock();
 	double list_time = double(list_end - list_start) / CLOCKS_PER_SEC;
 	std::cout << "List Runtime -> " << std::fixed << list_time << " sec " << std::endl;
-	// std::cout << "List Runtime -> " << std::fixed << (list_time* 1000000000) << " nanosec " << std::endl;
 	return (0);
 }
