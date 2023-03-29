@@ -13,15 +13,18 @@ public:
 	~PmergeMe(void);
 	PmergeMe &operator=(PmergeMe const &rhs);
 	int parse(int ac, char *argv[]);
-	void print_vector();
 	void print_vector(std::vector<int> a);
-	void start(void);
-	std::vector<int> start_algo(std::vector<int> arr);
-	std::vector<int> merge(std::vector<int> &left, std::vector<int> &right);
+	void print_list(std::list<int> a);
+	void start_vector(void);
+	void start_list(void);
+	std::vector<int>	vector_algo(std::vector<int> arr);
+	std::vector<int>	vector_merge(std::vector<int> &left, std::vector<int> &right);
+	std::list<int>	list_algo(std::list<int> arr);
+	std::list<int>	list_merge(std::list<int> &left, std::list<int> &right);
+	double measureTime(void (*func)(std::vector<int>), std::vector<int> arg);
 private:
 	std::vector<int> vector;
 	std::list<int> list;
-	unsigned int size;
 };
 
 int error(std::string str, int code);
