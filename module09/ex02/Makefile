@@ -2,7 +2,7 @@ CC = c++
 NAME = PmergeMe
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SOURCES = main.cpp Pmerge.cpp
+SOURCES = main.cpp PmergeMe.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
